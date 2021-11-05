@@ -22,6 +22,8 @@ class App extends React.Component {
             <option value="emojify">emojify</option>
           </select>
 
+          <button>Clear Text</button>
+
           <button type="submit">Check For Palindrome</button>
         </form>
 
