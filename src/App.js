@@ -2,11 +2,21 @@ import React from "react";
 import emojify from "./emojify";
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   render() {
     return (
       <main>
         <form className="App">
-          <input id="user_input" name="user_input" type="text" />
+          <input
+            id="user_input"
+            name="user_input"
+            type="text"
+          />
+
           <select id="operation" name="operation">
             <option value="reverse">reverse</option>
             <option value="emojify">emojify</option>
