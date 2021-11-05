@@ -4,7 +4,28 @@ import emojify from "./emojify";
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      userInput: "",
+      feature: "reverse"
+    };
+  }
+
+  handleInputChange = (event) => {
+    //change our state to reflect what the user has typed in
+    this.setState({
+      userInput: event.target.value
+    })
+      //OR
+    // const {value} = event.target;
+    // this.setState({
+    //   userInput: value,
+    // })
+  }
+
+  handleFeatureChange = (event) => {
+    this.setState({
+      feature: event.target.value
+    })
   }
 
   render() {
@@ -15,21 +36,24 @@ class App extends React.Component {
             id="user_input"
             name="user_input"
             type="text"
+            onChange={this.handleInputChange}
           />
 
-          <select id="operation" name="operation">
+          <select 
+            id="operation" 
+            name="operation"
+            onChange={this.handleFeatureChange}
+          >
             <option value="reverse">reverse</option>
             <option value="emojify">emojify</option>
           </select>
 
           <button>Clear Text</button>
-
-          <button type="submit">Check For Palindrome</button>
         </form>
 
         <section id="result">
-          <p>Current feature: reverse</p>
-          <p>You typed: </p>
+          <p>Current feature: {this.state.feature}</p>
+          <p>You typed: {this.state.userInput}</p>
           <p>Result: </p>
         </section>
       </main>
