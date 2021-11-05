@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import emojify from "./emojify";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <main>
+        <form className="App">
+          <input id="user_input" name="user_input" type="text" />
+          <select id="operation" name="operation">
+            <option value="reverse">reverse</option>
+            <option value="emojify">emojify</option>
+          </select>
+
+          <button type="submit">Check For Palindrome</button>
+        </form>
+
+        <section id="result">
+          <p>Current feature: reverse</p>
+          <p>You typed: </p>
+          <p>Result: </p>
+        </section>
+      </main>
+    );
+  }
 }
 
 export default App;
